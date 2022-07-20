@@ -14,9 +14,11 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 var Lavoraratore = /** @class */ (function () {
-    function Lavoraratore(anagrafica, redditoLordo) {
+    function Lavoraratore(anagrafica, redditoLordo, codred) {
         this._anagrafica = anagrafica;
         this.redditoLordo = redditoLordo;
+        this.codRed = codred;
+        this.utileTasse = this.redditoLordo * this.codRed / 100;
         if (this.redditoLordo <= 15000) {
             this.irpef = 23;
         }
@@ -67,10 +69,8 @@ var Lavoraratore = /** @class */ (function () {
 var Commerciante = /** @class */ (function (_super) {
     __extends(Commerciante, _super);
     function Commerciante(_anagrafica, redditoLordo) {
-        var _this = _super.call(this, _anagrafica, redditoLordo) || this;
-        _this.codRed = 50;
-        _this.utileTasse = _this.redditoLordo * _this.codRed / 100;
-        return _this;
+        return _super.call(this, _anagrafica, redditoLordo, 50) || this;
+        // this.utileTasse = this.redditoLordo * this.codRed / 100
     }
     return Commerciante;
 }(Lavoraratore));
@@ -79,8 +79,8 @@ var LiberoProfessionista = /** @class */ (function (_super) {
     function LiberoProfessionista(_anagrafica, redditoLordo) {
         var _this = _super.call(this, _anagrafica, redditoLordo) || this;
         _this.codRed = 60;
-        _this.utileTasse = _this.redditoLordo * _this.codRed / 100;
         return _this;
+        // this.utileTasse = this.redditoLordo * this.codRed / 100
     }
     return LiberoProfessionista;
 }(Lavoraratore));
@@ -89,8 +89,8 @@ var Dipendente = /** @class */ (function (_super) {
     function Dipendente(_anagrafica, redditoLordo) {
         var _this = _super.call(this, _anagrafica, redditoLordo) || this;
         _this.codRed = 40;
-        _this.utileTasse = _this.redditoLordo * _this.codRed / 100;
         return _this;
+        // this.utileTasse = this.redditoLordo * this.codRed / 100
     }
     return Dipendente;
 }(Lavoraratore));
