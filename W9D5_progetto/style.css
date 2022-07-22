@@ -1,0 +1,47 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+main{
+    background: #41BFB3;
+}
+button{
+    padding: 0.5rem;
+    color: white;
+    background-color: #275950;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px #41BFB3;
+    margin: 0 5px;
+}
+#userArea{
+    padding: 5vh 0;
+}
+#userArea > div{
+    text-shadow: 1px 1px #41BFB3;
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin: 10vh auto;
+    justify-content: space-around;
+    text-align: center;
+    width: 50%;
+    border: 1px solid #275950;  
+    background: #2A8C82;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap; 
+    flex-direction: column;
+}
+#userArea > div > div{
+    padding: 1rem 0;
+}
+
+
+
+
+
+/* classes */
+
+.hidden{
+    display: none;
+}
